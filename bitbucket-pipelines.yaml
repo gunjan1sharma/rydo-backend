@@ -1,0 +1,33 @@
+#  Sample Template
+image: node:latest
+pipelines:
+  custom: # Pipelines that are triggered manually
+    rydo: # The name that is displayed in the list in the Bitbucket Cloud GUI
+      - step:
+          script:
+            - echo "Manual triggers for Rydo!"
+      - step:
+          caches:
+            - node
+          name: Establishing connection to EC2
+          script:
+            - apt-get update
+            - ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
+            - echo connected to ec2
+
+      - step:
+          name: Building Rydo Server Application
+          script:
+            - echo Building started now...
+
+            - ssh $SSH_USER_NAME@SERVER_IP  'sudo killall node'
+            - ssh $SSH_USER_NAME@SERVER_IP 'sudo systemctl stop rydo.service'
+            - ssh $SSH_USER_NAME@$SERVER_IP 'cd /home/ubuntu/Rydo/rydo_app_server/rydo_server_v2 ; sudo git pull --progress -v --no-rebase "origin" '
+            - ssh $SSH_USER_NAME@$SERVER_IP 'cd /home/ubuntu/Rydo/rydo_app_server/rydo_server_v2 ; sudo npm install '
+            - ssh $SSH_USER_NAME@$SERVER_IP 'cd /home/ubuntu/Rydo/rydo_app_server/rydo_server_v2 ; sudo npm run start-server'
+      - step:
+          name: starting node service
+          script:
+            - ssh $SSH_USER_NAME@$SERVER_IP 'sudo systemctl start rydo.service'
+            - echo node started
+            - echo build completed

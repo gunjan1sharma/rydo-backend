@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "352293475228",
+    "project_id": "ride-hailing-213d0",
+    "storage_bucket": "ride-hailing-213d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352293475228:android:33f47c15835e5976956e59",
+        "android_client_info": {
+          "package_name": "com.techieaid.rydo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352293475228-m0nfubc5ncck0d7ji7unh7k6curakgie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVKVuVmx4Yz5-AXSPe9fn05Hpz02Ofx6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352293475228-m0nfubc5ncck0d7ji7unh7k6curakgie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

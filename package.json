@@ -1,0 +1,56 @@
+{
+  "name": "rydo_server_v2",
+  "version": "1.0.0",
+  "description": "Rydo Passenger and Driver Backend API V2",
+  "main": "index.js",
+  "scripts": {
+    "start": "env-cmd -f .env.development nodemon index.js",
+    "start-server": "node index.js",
+    "start:staging": "env-cmd -f .env.staging node nodemon index.js",
+    "start:production": "env-cmd -f .env node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://PrajnaBhat@bitbucket.org/techieaid_2019/rydo_server_v2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/techieaid_2019/rydo_server_v2/issues"
+  },
+  "homepage": "https://bitbucket.org/techieaid_2019/rydo_server_v2#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1285.0",
+    "axios": "^1.2.2",
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.3",
+    "env-cmd": "^10.1.0",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "fcm-node": "^1.6.1",
+    "firebase": "^9.14.0",
+    "firebase-admin": "^11.3.0",
+    "haversine": "^1.1.1",
+    "haversine-distance": "^1.2.1",
+    "joi": "^17.7.0",
+    "mapmyindia-sdk-nodejs": "^1.1.0",
+    "moment": "^2.29.4",
+    "mongodb": "^5.0.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^2.3.3",
+    "node-cache": "^5.1.2",
+    "node-cron": "^3.0.2",
+    "otp-generator": "^4.0.0",
+    "redis": "^4.5.1",
+    "sequelize": "^6.25.7",
+    "sequelize-auto": "^0.8.8",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.20"
+  }
+}
